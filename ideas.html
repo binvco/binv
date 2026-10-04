@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Idea Bank — BINV</title>
+<meta name="description" content="아이디어가 씨앗에서 완성까지 자라는 과정을 공개합니다.">
+<meta property="og:title" content="Idea Bank — BINV">
+<meta property="og:description" content="Seed, Growing, Building, Built.">
+<meta property="og:image" content="https://binv.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#070A12">
+<link rel="canonical" href="https://binv.ai/ideas">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070A12'/%3E%3Cpath d='M18 18 L32 46 L46 18' fill='none' stroke='%233D7BFF' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="/site.css">
+<style>
+  /* The stage track: one horizon line, four markers, a column under each */
+  .track { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 clamp(1rem, 3vw, 2.5rem); padding-top: 2.25rem; }
+  .track::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 7px; height: 1px;
+    background: linear-gradient(90deg, var(--line), var(--blue) 70%, var(--blue-soft));
+  }
+  .stage { position: relative; min-width: 0; }
+  .dot { position: absolute; top: calc(-2.25rem + 1px); left: 0; width: 13px; height: 13px; border-radius: 50%; border: 1px solid var(--muted); background: var(--bg); }
+  .stage[data-s="growing"] .dot { border-color: var(--blue-soft); background: rgba(157, 184, 255, 0.25); }
+  .stage[data-s="building"] .dot { border-color: var(--blue); background: var(--blue); box-shadow: 0 0 12px rgba(61, 123, 255, 0.7); }
+  .stage[data-s="built"] .dot { border-color: var(--ink); background: var(--ink); }
+
+  .stage h2 { font-family: var(--display); font-weight: 500; font-size: 1.0625rem; display: flex; align-items: baseline; gap: 0.6rem; }
+  .stage h2 .n { color: var(--muted); font-weight: 300; }
+  .stage .desc { color: var(--muted); font-size: 0.875rem; margin-bottom: 1.25rem; }
+  .stage ul { list-style: none; }
+  .idea { padding-block: 1rem; border-top: 1px solid var(--line); }
+  .idea h3 { font-size: 1.0625rem; font-weight: 600; line-height: 1.4; }
+  .idea p { color: var(--muted); font-size: 0.9375rem; margin-top: 0.3rem; }
+  .idea .tags { display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; margin-top: 0.5rem; font-size: 0.8125rem; color: var(--blue-soft); }
+  .idea .rel { display: inline-block; margin-top: 0.5rem; font-size: 0.875rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--blue); }
+  .idea .rel:hover, .idea .rel:focus-visible { color: var(--blue-soft); }
+  .empty { color: var(--muted); font-size: 0.9375rem; padding-block: 1rem; border-top: 1px solid var(--line); }
+
+  .paused { margin-top: clamp(3rem, 7vw, 5rem); }
+  .paused h2 { font-family: var(--display); font-weight: 500; font-size: 1.0625rem; color: var(--muted); margin-bottom: 1rem; }
+
+  @media (max-width: 860px) {
+    .track { grid-template-columns: 1fr; padding-top: 0; gap: 2.5rem; }
+    .track::before { left: 6px; right: auto; top: 0; bottom: 0; width: 1px; height: auto; background: linear-gradient(180deg, var(--line), var(--blue) 70%, var(--blue-soft)); }
+    .stage { padding-left: 2rem; }
+    .dot { top: 0.35rem; left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap bar">
+  <a class="mark" href="/">BINV</a>
+  <nav aria-label="사이트 메뉴">
+    <a href="/now">Now</a>
+    <a href="/ideas" aria-current="page">Ideas</a>
+    <a href="/notes">Notes</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="head">
+    <h1>Idea Bank</h1>
+    <div class="horizon" aria-hidden="true"></div>
+    <p>떠오른 생각이 씨앗에서 완성까지 자라는 과정을 공개합니다. 모든 아이디어가 완성되진 않지만, 어디까지 자랐는지는 기록합니다.</p>
+    <p class="updated" id="updated"></p>
+  </div>
+
+  <div class="track" id="track"></div>
+  <section class="paused" id="paused" hidden>
+    <h2>Paused</h2>
+    <ul id="paused-list" style="list-style:none"></ul>
+  </section>
+  <p class="notice" id="notice" hidden>지금은 내용을 불러오지 못했어요. 잠시 후 새로고침해 주세요.</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>BINV — Build Ideas. Nurture Vision.</span>
+    <a href="mailto:hello@binv.ai">hello@binv.ai</a>
+  </div>
+</footer>
+
+<script>
+  const STAGES = [
+    { key: "seed", label: "Seed", desc: "막 떠오른 생각" },
+    { key: "growing", label: "Growing", desc: "조금 더 고민하는 중" },
+    { key: "building", label: "Building", desc: "실제로 만드는 중" },
+    { key: "built", label: "Built", desc: "완성한 것" }
+  ];
+
+  function el(tag, cls, text) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+
+  function ideaItem(idea) {
+    const li = el("li", "idea");
+    li.append(el("h3", "", idea.title || ""));
+    if (idea.note) li.append(el("p", "", idea.note));
+    if (Array.isArray(idea.tags) && idea.tags.length) {
+      const t = el("div", "tags");
+      idea.tags.forEach(tag => t.append(el("span", "", "#" + tag)));
+      li.append(t);
+    }
+    if (idea.link) {
+      const a = el("a", "rel", "관련 기록 보기");
+      a.href = idea.link;
+      li.append(a);
+    }
+    return li;
+  }
+
+  fetch("/binv-data.json", { cache: "no-cache" })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(data => {
+      if (data.updated) document.getElementById("updated").textContent = "Updated " + data.updated;
+      const ideas = Array.isArray(data.ideas) ? data.ideas : [];
+      const track = document.getElementById("track");
+
+      STAGES.forEach(s => {
+        const list = ideas.filter(i => i.status === s.key);
+        const col = el("section", "stage");
+        col.dataset.s = s.key;
+        col.append(el("span", "dot"));
+        const h = el("h2", "", s.label);
+        h.append(el("span", "n", String(list.length)));
+        col.append(h, el("p", "desc", s.desc));
+        const ul = el("ul");
+        if (list.length) list.forEach(i => ul.append(ideaItem(i)));
+        else ul.append(el("li", "empty", "아직 없음"));
+        col.append(ul);
+        track.append(col);
+      });
+
+      const paused = ideas.filter(i => i.status === "paused");
+      if (paused.length) {
+        const ul = document.getElementById("paused-list");
+        paused.forEach(i => ul.append(ideaItem(i)));
+        document.getElementById("paused").hidden = false;
+      }
+    })
+    .catch(() => { document.getElementById("notice").hidden = false; });
+</script>
+</body>
+</html>

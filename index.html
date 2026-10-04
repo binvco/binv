@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>BINV — Vision by BIN.</title>
-<meta name="description" content="Building ideas into meaningful work. BINV는 BIN의 개인 브랜드이자 아이디어·업무·AI를 실험하고 기록하는 공간입니다.">
-<meta property="og:title" content="BINV — Vision by BIN.">
-<meta property="og:description" content="Building ideas into meaningful work.">
+<title>BINV — Build Ideas. Nurture Vision.</title>
+<meta name="description" content="Build Ideas. Nurture Vision. BINV는 BIN의 개인 브랜드이자 아이디어·업무·AI를 실험하고 기록하는 공간입니다.">
+<meta property="og:title" content="BINV — Build Ideas. Nurture Vision.">
+<meta property="og:description" content="Vision by BIN.">
 <meta property="og:url" content="https://binv.ai">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BINV">
@@ -14,8 +14,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="BINV — Vision by BIN.">
-<meta name="twitter:description" content="Building ideas into meaningful work.">
+<meta name="twitter:title" content="BINV — Build Ideas. Nurture Vision.">
+<meta name="twitter:description" content="Vision by BIN.">
 <meta name="twitter:image" content="https://binv.ai/og-image.png">
 <link rel="canonical" href="https://binv.ai/">
 <!-- 네이버 서치어드바이저 소유확인 태그를 받으면 아래 줄 대신 붙여넣으세요 -->
@@ -177,32 +177,58 @@
   .contact-lead { color: var(--muted); max-width: 36em; margin-bottom: 1.5rem; word-break: keep-all; }
   .contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 2rem; }
 
+  .topnav { position: absolute; top: var(--pad); right: var(--pad); display: flex; gap: 1.5rem; }
+  .topnav a { color: var(--muted); text-decoration: none; transition: color .2s ease; }
+  .topnav a:hover, .topnav a:focus-visible { color: var(--ink); }
+
+  .snap .wrap { display: grid; grid-template-columns: minmax(8rem, 14rem) 1fr; gap: 1rem 2rem; }
+  .snap + .snap { border-top: 1px solid var(--line); }
+  .snap h2 { font-family: var(--display); font-weight: 500; font-size: 1rem; color: var(--blue-soft); padding-top: 0.35rem; }
+  .snap ul { list-style: none; }
+  .snap li { font-size: clamp(1.25rem, 2.4vw, 1.625rem); font-weight: 500; line-height: 1.4; padding-block: 0.3rem; }
+  .snap .more { display: inline-block; margin-top: 1.25rem; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .snap .more:hover, .snap .more:focus-visible { color: var(--ink); border-color: var(--blue); }
+  .counts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; max-width: 36rem; }
+  .counts div { border-top: 1px solid var(--line); padding-top: 0.75rem; }
+  .counts b { display: block; font-family: var(--display); font-weight: 300; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; }
+  .counts span { color: var(--muted); font-size: 0.875rem; }
+  .counts .on b { color: var(--blue-soft); }
+  .notes-mini { list-style: none; }
+  .notes-mini a { display: block; text-decoration: none; padding-block: 0.3rem; }
+  .notes-mini small { display: block; color: var(--muted); font-size: 0.875rem; font-weight: 400; }
+  .notes-mini a:hover span, .notes-mini a:focus-visible span { color: var(--blue-soft); }
+
   footer { padding-block: 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.875rem; }
 
   @media (max-width: 640px) {
-    .pillar, .bin, .latest .wrap, .letter .wrap { grid-template-columns: 1fr; gap: 0.5rem; }
+    .pillar, .bin, .latest .wrap, .letter .wrap, .snap .wrap { grid-template-columns: 1fr; gap: 0.5rem; }
+    .snap h2 { padding-top: 0; }
     .bin h2, .latest h2, .letter h2 { padding-top: 0; }
     .pillar-key { padding-top: 0; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .horizon { animation: none; }
-    .email, .channels a, .btn { transition: none; }
+    .email, .channels a, .btn, .topnav a { transition: none; }
   }
 </style>
 </head>
 <body>
 
 <header class="hero wrap">
+  <nav class="topnav" aria-label="사이트 메뉴">
+    <a href="/now">Now</a>
+    <a href="/ideas">Ideas</a>
+    <a href="/notes">Notes</a>
+  </nav>
   <h1 class="wordmark">BINV</h1>
   <div class="horizon" aria-hidden="true"></div>
-  <p class="tagline"><span>Vision by BIN.</span><span>Ideas. Work. AI.</span></p>
+  <p class="tagline"><span>Build Ideas. Nurture Vision.</span><span>Vision by BIN.</span></p>
 </header>
 
 <main>
   <section class="about">
     <div class="wrap">
-      <p class="statement">Building ideas into meaningful work.</p>
       <p class="lead">떠오른 아이디어를 기획으로 정리하고, AI로 일하는 방식을 실험하고, 그 과정에서 음악과 콘텐츠를 직접 만듭니다. 그 기록을 이곳에 모읍니다.</p>
     </div>
   </section>
@@ -243,6 +269,37 @@
         <p class="item-title">최신 콘텐츠 제목</p>
         <p class="item-meta">YouTube에서 보기</p>
       </a>
+    </div>
+  </section>
+
+  <!-- Now와 Idea Bank 요약: 내용은 binv-data.json에서 자동으로 불러옵니다 -->
+  <section class="snap" id="snap-now" hidden>
+    <div class="wrap">
+      <h2>Now</h2>
+      <div>
+        <ul id="now-list"></ul>
+        <a class="more" href="/now">지금 집중하고 있는 것 전체 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="snap" id="snap-notes" hidden>
+    <div class="wrap">
+      <h2>Notes</h2>
+      <div>
+        <ul class="notes-mini" id="notes-list"></ul>
+        <a class="more" href="/notes">모든 기록 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="snap" id="snap-ideas" hidden>
+    <div class="wrap">
+      <h2>Idea Bank</h2>
+      <div>
+        <div class="counts" id="counts"></div>
+        <a class="more" href="/ideas">아이디어가 자라는 과정 보기</a>
+      </div>
     </div>
   </section>
 
@@ -291,5 +348,43 @@
   <div class="wrap">© 2026 BINV</div>
 </footer>
 
+<script>
+  fetch("/binv-data.json", { cache: "no-cache" })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(data => {
+      const building = (data.now && data.now.building) || [];
+      if (building.length) {
+        const ul = document.getElementById("now-list");
+        building.forEach(t => { const li = document.createElement("li"); li.textContent = t; ul.append(li); });
+        document.getElementById("snap-now").hidden = false;
+      }
+      const notes = (Array.isArray(data.notes) ? data.notes : [])
+        .slice().sort((a, b) => (b.date || "").localeCompare(a.date || "")).slice(0, 3);
+      if (notes.length) {
+        const ul = document.getElementById("notes-list");
+        notes.forEach(n => {
+          const li = document.createElement("li");
+          const a = document.createElement("a"); a.href = "/notes?n=" + encodeURIComponent(n.slug);
+          const sm = document.createElement("small"); sm.textContent = (n.series || "") + "  " + (n.date || "");
+          const sp = document.createElement("span"); sp.textContent = n.title;
+          a.append(sm, sp); li.append(a); ul.append(li);
+        });
+        document.getElementById("snap-notes").hidden = false;
+      }
+      const ideas = Array.isArray(data.ideas) ? data.ideas : [];
+      if (ideas.length) {
+        const box = document.getElementById("counts");
+        [["seed","Seed"],["growing","Growing"],["building","Building"],["built","Built"]].forEach(([k, label]) => {
+          const d = document.createElement("div");
+          if (k === "building") d.className = "on";
+          const b = document.createElement("b"); b.textContent = ideas.filter(i => i.status === k).length;
+          const sp = document.createElement("span"); sp.textContent = label;
+          d.append(b, sp); box.append(d);
+        });
+        document.getElementById("snap-ideas").hidden = false;
+      }
+    })
+    .catch(() => {});
+</script>
 </body>
 </html>

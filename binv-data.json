@@ -1,0 +1,63 @@
+{
+  "updated": "2026-10-05",
+  "now": {
+    "building": ["BINV — 아이디어와 실험을 공개하는 개인 운영체계", "BINV 콘텐츠 Season 1 (8주, 16개)"],
+    "learning": ["GitHub와 Cloudflare로 사이트 운영하기", "AI로 반복 업무 줄이기"],
+    "thinking": ["직함 없이 신뢰를 쌓는 개인 브랜드", "일과 아이디어를 구조화하는 방식"],
+    "creating": ["BINV NOTES 짧은 글", "직접 쓴 가사로 AI와 첫 곡"]
+  },
+  "notes": [
+    {
+      "slug": "b1-naming",
+      "title": "BINV라는 이름을 짓기까지",
+      "date": "2026-10-14",
+      "series": "BUILD",
+      "summary": "BINX.ai를 포기하고 BINV를 정하기까지. 좋은 이름은 떠오르는 게 아니라 조건을 정하고 줄여가는 과정에서 나온다."
+    }
+  ],
+  "ideas": [
+    {
+      "title": "BINV 브랜드 아이덴티티",
+      "status": "built",
+      "note": "이름, 슬로건, 워드마크, 파란 지평선 한 줄.",
+      "tags": ["BINV", "Brand"],
+      "link": "/notes?n=b1-naming"
+    },
+    {
+      "title": "binv.ai 웹사이트 V1",
+      "status": "built",
+      "note": "GitHub와 Cloudflare로 하루 만에 띄운 첫 버전.",
+      "tags": ["BINV", "Web"]
+    },
+    {
+      "title": "Idea Bank",
+      "status": "building",
+      "note": "아이디어가 씨앗에서 완성까지 자라는 과정을 공개하는 페이지.",
+      "tags": ["BINV", "Web"]
+    },
+    {
+      "title": "BINV 콘텐츠 시스템",
+      "status": "building",
+      "note": "NOTES, WORK, LAB, BUILD 네 시리즈로 Season 1 운영하기.",
+      "tags": ["Content"]
+    },
+    {
+      "title": "AI 음악 플레이리스트 채널",
+      "status": "growing",
+      "note": "직접 쓴 가사로 만든 곡들을 담는 플레이리스트.",
+      "tags": ["AI", "Music"]
+    },
+    {
+      "title": "30 Days of AI",
+      "status": "seed",
+      "note": "하루에 하나씩, 실제로 쓸모 있는 AI 활용법 찾기.",
+      "tags": ["AI", "Challenge"]
+    },
+    {
+      "title": "개인 AI 대시보드",
+      "status": "seed",
+      "note": "생각, 할 일, 기록을 한 화면에서 보는 나만의 대시보드.",
+      "tags": ["AI", "Productivity"]
+    }
+  ]
+}
