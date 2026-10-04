@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BINV — Vision by BIN.</title>
+<meta name="description" content="BINV는 BIN의 개인 브랜드입니다. 아이디어를 기획으로, AI로 일하는 법, AI로 만드는 음악과 콘텐츠를 기록합니다.">
+<meta property="og:title" content="BINV — Vision by BIN.">
+<meta property="og:description" content="Ideas. Work. AI.">
+<meta property="og:url" content="https://binv.ai">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BINV">
+<meta property="og:image" content="https://binv.ai/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BINV — Vision by BIN.">
+<meta name="twitter:description" content="Ideas. Work. AI.">
+<meta name="twitter:image" content="https://binv.ai/og-image.png">
+<link rel="canonical" href="https://binv.ai/">
+<!-- 네이버 서치어드바이저 소유확인 태그를 받으면 아래 줄 대신 붙여넣으세요 -->
+<!-- <meta name="naver-site-verification" content="여기에-코드"> -->
+<meta name="theme-color" content="#070A12">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070A12'/%3E%3Cpath d='M18 18 L32 46 L46 18' fill='none' stroke='%233D7BFF' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root {
+    --bg: #070A12;
+    --ink: #E9EDF5;
+    --muted: #8D96A8;
+    --line: rgba(233, 237, 245, 0.12);
+    --blue: #3D7BFF;
+    --blue-soft: #9DB8FF;
+    --pad: clamp(1.5rem, 5vw, 4rem);
+    --display: "Unbounded", "Pretendard", system-ui, sans-serif;
+    --body: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--bg); scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; border-radius: 2px; }
+
+  .wrap { max-width: 72rem; margin: 0 auto; padding-inline: var(--pad); }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: grid;
+    align-content: end;
+    padding-block: var(--pad);
+    overflow: hidden;
+  }
+  .wordmark {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(5rem, 25vw, 21rem);
+    line-height: 0.82;
+    letter-spacing: -0.03em;
+    margin-left: -0.04em;
+  }
+  .horizon {
+    height: 1px;
+    margin: clamp(1.5rem, 3vw, 2.5rem) 0;
+    background: linear-gradient(90deg, var(--blue) 0%, var(--blue-soft) 45%, transparent 100%);
+    box-shadow: 0 0 18px 1px rgba(61, 123, 255, 0.55);
+    transform-origin: left center;
+    animation: scan 1.8s cubic-bezier(.2,.7,.1,1) 0.2s both;
+  }
+  @keyframes scan { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
+  .tagline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 2rem;
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(1rem, 2vw, 1.375rem);
+  }
+  .tagline span:last-child { color: var(--muted); }
+
+  /* Sections */
+  section { padding-block: clamp(4rem, 10vw, 8rem); border-top: 1px solid var(--line); }
+  .about p {
+    font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+    line-height: 1.65;
+    max-width: 32em;
+    word-break: keep-all;
+  }
+
+  .pillars { list-style: none; }
+  .pillar {
+    display: grid;
+    grid-template-columns: minmax(8rem, 14rem) 1fr;
+    gap: 1rem 2rem;
+    padding-block: clamp(1.75rem, 4vw, 2.75rem);
+    border-bottom: 1px solid var(--line);
+  }
+  .pillar:first-child { padding-top: 0; }
+  .pillar-key {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--blue-soft);
+    padding-top: 0.35rem;
+  }
+  .pillar h3 { font-size: clamp(1.375rem, 2.6vw, 1.875rem); font-weight: 600; line-height: 1.35; margin-bottom: 0.5rem; word-break: keep-all; }
+  .pillar p { color: var(--muted); max-width: 36em; word-break: keep-all; }
+
+  .contact h2 { font-size: 1.125rem; font-weight: 500; color: var(--muted); margin-bottom: 1rem; }
+  .email {
+    display: inline-block;
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(1.75rem, 6vw, 4rem);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    background: linear-gradient(var(--blue), var(--blue)) no-repeat 0 100% / 0 1px;
+    transition: background-size .35s ease;
+    padding-bottom: 0.1em;
+  }
+  .email:hover, .email:focus-visible { background-size: 100% 1px; }
+  .channels { list-style: none; display: flex; flex-wrap: wrap; gap: 0.75rem 1.75rem; margin-top: clamp(2.5rem, 6vw, 4rem); }
+  .channels a { color: var(--muted); text-decoration: none; transition: color .2s ease; }
+  .channels a:hover, .channels a:focus-visible { color: var(--ink); }
+
+
+  .bin { display: grid; grid-template-columns: minmax(8rem, 14rem) 1fr; gap: 1rem 2rem; }
+  .bin h2, .latest h2, .letter h2 {
+    font-family: var(--display); font-weight: 500; font-size: 1rem; color: var(--blue-soft); padding-top: 0.35rem;
+  }
+  .bin p { max-width: 36em; word-break: keep-all; }
+  .bin p + p { margin-top: 1rem; color: var(--muted); }
+
+  .latest .wrap, .letter .wrap { display: grid; grid-template-columns: minmax(8rem, 14rem) 1fr; gap: 1rem 2rem; }
+  .latest a.item { display: block; text-decoration: none; }
+  .latest .item-title { font-size: clamp(1.375rem, 2.6vw, 1.875rem); font-weight: 600; line-height: 1.35; word-break: keep-all; }
+  .latest .item-meta { color: var(--muted); margin-top: 0.35rem; }
+  .latest a.item:hover .item-title, .latest a.item:focus-visible .item-title { color: var(--blue-soft); }
+  .letter p { color: var(--muted); max-width: 36em; margin-bottom: 1.25rem; word-break: keep-all; }
+
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    border: 1px solid var(--blue);
+    border-radius: 999px;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color .2s ease;
+  }
+  .btn:hover, .btn:focus-visible { background-color: rgba(61, 123, 255, 0.18); }
+  .contact-lead { color: var(--muted); max-width: 36em; margin-bottom: 1.5rem; word-break: keep-all; }
+  .contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 2rem; }
+
+  footer { padding-block: 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.875rem; }
+
+  @media (max-width: 640px) {
+    .pillar, .bin, .latest .wrap, .letter .wrap { grid-template-columns: 1fr; gap: 0.5rem; }
+    .bin h2, .latest h2, .letter h2 { padding-top: 0; }
+    .pillar-key { padding-top: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .horizon { animation: none; }
+    .email, .channels a, .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <h1 class="wordmark">BINV</h1>
+  <div class="horizon" aria-hidden="true"></div>
+  <p class="tagline"><span>Vision by BIN.</span><span>Ideas. Work. AI.</span></p>
+</header>
+
+<main>
+  <section class="about">
+    <div class="wrap">
+      <p>BINV는 BIN의 개인 브랜드입니다. 떠오른 아이디어를 기획으로 정리하고, AI로 일하는 방식을 실험하고, 그 과정에서 음악과 콘텐츠를 직접 만듭니다. 그 기록을 이곳에 모읍니다.</p>
+    </div>
+  </section>
+
+  <section aria-label="BINV가 다루는 것">
+    <div class="wrap">
+      <ul class="pillars">
+        <li class="pillar">
+          <span class="pillar-key">Ideas</span>
+          <div>
+            <h3>아이디어를 기획으로</h3>
+            <p>머릿속 생각이 실행 가능한 계획이 되기까지, 정리하고 구조화하는 과정을 그대로 공유합니다.</p>
+          </div>
+        </li>
+        <li class="pillar">
+          <span class="pillar-key">Work</span>
+          <div>
+            <h3>AI로 일 잘하는 법</h3>
+            <p>실제 업무에 AI를 붙여 보며 시간을 줄이고 결과를 높인 방법을 기록합니다.</p>
+          </div>
+        </li>
+        <li class="pillar">
+          <span class="pillar-key">AI</span>
+          <div>
+            <h3>AI로 만드는 음악과 콘텐츠</h3>
+            <p>직접 쓴 가사로 AI와 함께 곡을 만들고, 영상과 디자인까지 완성하는 과정을 보여줍니다.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 최신 작업: 첫 콘텐츠가 나오면 아래 section의 hidden을 지우고 링크와 제목을 바꾸세요 -->
+  <section class="latest" hidden>
+    <div class="wrap">
+      <h2>Latest</h2>
+      <a class="item" href="https://www.youtube.com/@binvco" target="_blank" rel="noopener">
+        <p class="item-title">최신 콘텐츠 제목</p>
+        <p class="item-meta">YouTube에서 보기</p>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap bin">
+      <h2>BIN</h2>
+      <div>
+        <p>안녕하세요, BIN입니다. 떠오른 생각을 그냥 흘려보내지 않고 실제로 만들어 보는 것을 좋아합니다.</p>
+        <p>AI가 일하는 방식과 만드는 방식을 크게 바꾸고 있는 지금, 직접 부딪혀 보며 알게 된 것들을 정리하고 나누기 위해 BINV를 시작했습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 뉴스레터: 스티비나 메일리 구독 페이지를 만든 뒤 hidden을 지우고 링크를 바꾸세요 -->
+  <section class="letter" hidden>
+    <div class="wrap">
+      <h2>Letter</h2>
+      <div>
+        <p>새 글과 작업 기록을 메일로 받아보세요. 한 달에 한두 번 보냅니다.</p>
+        <a class="btn" href="https://YOUR-NEWSLETTER-LINK" target="_blank" rel="noopener">뉴스레터 구독하기</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <h2>함께 일해요</h2>
+      <p class="contact-lead">AI 업무 활용, 콘텐츠 제작, 기획에 관한 협업과 문의를 받습니다. 메일이나 카카오채널로 편하게 연락주세요.</p>
+      <div class="contact-actions">
+        <a class="email" href="mailto:hello@binv.ai">hello@binv.ai</a>
+        <a class="btn" href="https://pf.kakao.com/_NNpxiX/chat" target="_blank" rel="noopener">카카오채널로 상담하기</a>
+      </div>
+      <ul class="channels" aria-label="BINV 채널">
+        <li><a href="https://www.youtube.com/@binvco" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.instagram.com/binv.ai" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.threads.com/@binv.ai" target="_blank" rel="noopener">Threads</a></li>
+        <li><a href="https://x.com/binvco" target="_blank" rel="noopener">X</a></li>
+        <li><a href="https://www.linkedin.com/in/binv" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://pf.kakao.com/_NNpxiX" target="_blank" rel="noopener">카카오채널</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 BINV</div>
+</footer>
+
+</body>
+</html>
