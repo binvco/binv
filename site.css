@@ -1,0 +1,57 @@
+/* BINV shared styles for subpages (now.html, ideas.html) */
+:root {
+  --bg: #070A12;
+  --ink: #E9EDF5;
+  --muted: #8D96A8;
+  --line: rgba(233, 237, 245, 0.12);
+  --blue: #3D7BFF;
+  --blue-soft: #9DB8FF;
+  --pad: clamp(1.5rem, 5vw, 4rem);
+  --display: "Unbounded", "Pretendard", system-ui, sans-serif;
+  --body: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: var(--bg); }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  word-break: keep-all;
+}
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; border-radius: 2px; }
+.wrap { max-width: 72rem; margin: 0 auto; padding-inline: var(--pad); }
+
+/* Top bar */
+.bar { display: flex; align-items: center; justify-content: space-between; padding-block: 1.5rem; }
+.bar .mark { font-family: var(--display); font-weight: 500; font-size: 1.125rem; text-decoration: none; letter-spacing: -0.01em; }
+.bar nav { display: flex; gap: 1.5rem; }
+.bar nav a { color: var(--muted); text-decoration: none; transition: color .2s ease; }
+.bar nav a:hover, .bar nav a:focus-visible, .bar nav a[aria-current="page"] { color: var(--ink); }
+
+/* Page head */
+.head { padding-block: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 3.5rem); }
+.head h1 { font-family: var(--display); font-weight: 300; font-size: clamp(2.75rem, 9vw, 6rem); line-height: 1; letter-spacing: -0.03em; }
+.head .horizon {
+  height: 1px; margin: clamp(1.25rem, 3vw, 2rem) 0;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--blue-soft) 45%, transparent 100%);
+  box-shadow: 0 0 14px 1px rgba(61, 123, 255, 0.5);
+}
+.head p { color: var(--muted); max-width: 36em; }
+.head .updated { margin-top: 0.75rem; font-size: 0.9375rem; }
+
+.notice { color: var(--muted); padding-block: 2rem; }
+
+footer { margin-top: clamp(4rem, 10vw, 7rem); padding-block: 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.875rem; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem 2rem; }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .bar nav a { transition: none; }
+}
