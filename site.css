@@ -55,3 +55,6 @@ footer a:hover { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
   .bar nav a { transition: none; }
 }
+
+.bar .mark { display: inline-flex; align-items: center; gap: .6rem; }
+.bar .mark img { border-radius: 50%; object-fit: cover; }
