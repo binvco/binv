@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06",
+  "updated": "2026-10-07",
   "now": {
     "building": [
       "BINV — 아이디어와 실험을 공개하는 개인 운영체계",
@@ -22,14 +22,14 @@
     {
       "slug": "building-binv-around-the-present",
       "title": "홈페이지에 경력 대신 현재를 담았다",
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "series": "BUILD",
       "summary": "완성된 결과뿐 아니라 지금 무엇을 생각하고 만드는지 보여주기 위해, BINV 첫 홈페이지를 Now·Idea Bank·Notes로 구성했다."
     },
     {
       "slug": "b1-naming",
       "title": "BINV라는 이름을 짓기까지",
-      "date": "2026-10-14",
+      "date": "2026-10-05",
       "series": "BUILD",
       "summary": "BINX.ai를 포기하고 BINV를 정하기까지. 좋은 이름은 떠오르는 게 아니라 조건을 정하고 줄여가는 과정에서 나온다."
     }
