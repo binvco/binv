@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>BINV — Build Ideas. Nurture Vision.</title>
-<meta name="description" content="Build Ideas. Nurture Vision. BINV는 BIN의 개인 브랜드이자 아이디어·업무·AI를 실험하고 기록하는 공간입니다.">
+<meta name="description" content="Build Ideas. Nurture Vision. BINV는 BIN이 아이디어·업무·AI·음악을 실험하고 그 과정을 기록하는 개인 공간입니다.">
 <meta property="og:title" content="BINV — Build Ideas. Nurture Vision.">
 <meta property="og:description" content="Vision by BIN.">
 <meta property="og:url" content="https://binv.ai">
@@ -199,6 +199,7 @@
   .notes-mini a:hover span, .notes-mini a:focus-visible span { color: var(--blue-soft); }
 
   /* Music — Spotify 아티스트 임베드 */
+  .music-lead { max-width: 36em; margin-bottom: 1.25rem; word-break: keep-all; }
   .music-embed { border-radius: 12px; overflow: hidden; background: rgba(233, 237, 245, 0.04); max-width: 40rem; }
   .music-embed iframe { display: block; width: 100%; height: 352px; border: 0; }
 
@@ -216,6 +217,49 @@
     .email, .channels a, .btn, .topnav a { transition: none; }
   }
 </style>
+<link rel="alternate" type="application/json" href="/binv-data.json" title="BINV 최신 데이터 (Now·Notes·Ideas)">
+<!-- The Second Audience: 사람이 아닌 방문자(검색엔진·AI)가 이 사이트를 이해하도록 돕는 구조화 데이터 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://binv.ai/#website",
+      "url": "https://binv.ai/",
+      "name": "BINV",
+      "alternateName": "Build Ideas. Nurture Vision.",
+      "description": "BIN이 아이디어·업무·AI·음악을 실험하고 그 과정을 기록하는 개인 공간",
+      "inLanguage": "ko",
+      "publisher": { "@id": "https://binv.ai/#bin" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://binv.ai/#bin",
+      "name": "BIN",
+      "url": "https://binv.ai/",
+      "email": "hello@binv.ai",
+      "sameAs": [
+        "https://www.youtube.com/@binvco",
+        "https://www.instagram.com/binv.ai",
+        "https://www.threads.com/@binv.ai",
+        "https://x.com/binvco",
+        "https://www.linkedin.com/in/binv",
+        "https://github.com/binvco"
+      ]
+    },
+    {
+      "@type": "MusicGroup",
+      "@id": "https://binv.ai/#music",
+      "name": "BINV",
+      "description": "BIN이 쓴 가사로 AI와 함께 만드는 음악 실험, BINV MUSIC",
+      "url": "https://binv.ai/#music",
+      "member": { "@id": "https://binv.ai/#bin" },
+      "sameAs": [ "https://open.spotify.com/artist/55Vfg9FnR4EOth5ecFItkc" ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -284,32 +328,44 @@
   </section>
 
   <!-- Now와 Idea Bank 요약: 내용은 binv-data.json에서 자동으로 불러옵니다 -->
-  <section class="snap" id="snap-now" hidden>
+  <!-- 아래 Now·Notes·Idea Bank는 JS 없이도 읽히도록 HTML에 직접 적어 둔 스냅샷입니다.
+       방문 시에는 binv-data.json의 최신 내용으로 자동 교체됩니다. (스냅샷 기준: 2026-10-05) -->
+  <section class="snap" id="snap-now">
     <div class="wrap">
       <h2>Now</h2>
       <div>
-        <ul id="now-list"></ul>
+        <ul id="now-list">
+          <li>BINV — 아이디어와 실험을 공개하는 개인 운영체계</li>
+          <li>BINV 콘텐츠 Season 1 (8주, 16개)</li>
+        </ul>
         <a class="more" href="/now">지금 집중하고 있는 것 전체 보기</a>
       </div>
     </div>
   </section>
 
-  <section class="snap" id="snap-notes" hidden>
+  <section class="snap" id="snap-notes">
     <div class="wrap">
       <h2>Notes</h2>
       <div>
         <p class="season">Season 1 · 10월 14일 시작 · 매주 수요일과 일요일에 새 기록이 올라옵니다.</p>
-        <ul class="notes-mini" id="notes-list"></ul>
+        <ul class="notes-mini" id="notes-list">
+          <li><a href="/notes?n=b1-naming"><small>BUILD  2026-10-14</small><span>BINV라는 이름을 짓기까지</span></a></li>
+        </ul>
         <a class="more" href="/notes">모든 기록 보기</a>
       </div>
     </div>
   </section>
 
-  <section class="snap" id="snap-ideas" hidden>
+  <section class="snap" id="snap-ideas">
     <div class="wrap">
       <h2>Idea Bank</h2>
       <div>
-        <div class="counts" id="counts"></div>
+        <div class="counts" id="counts">
+          <div><b>2</b><span>Seed</span></div>
+          <div><b>1</b><span>Growing</span></div>
+          <div class="on"><b>2</b><span>Building</span></div>
+          <div><b>2</b><span>Built</span></div>
+        </div>
         <a class="more" href="/ideas">아이디어가 자라는 과정 보기</a>
       </div>
     </div>
@@ -321,6 +377,7 @@
       <h2>Music</h2>
       <div>
         <p class="season">BINV MUSIC · 생각이 음악이 되는 실험</p>
+        <p class="music-lead">BIN이 쓴 가사로 AI와 함께 만든 곡을 Spotify에 공개합니다.</p>
         <div class="music-embed">
           <iframe src="https://open.spotify.com/embed/artist/55Vfg9FnR4EOth5ecFItkc?utm_source=generator&amp;theme=0"
                   title="BINV — Spotify" loading="lazy"
@@ -383,14 +440,14 @@
     .then(data => {
       const building = (data.now && data.now.building) || [];
       if (building.length) {
-        const ul = document.getElementById("now-list");
+        const ul = document.getElementById("now-list"); ul.textContent = "";
         building.forEach(t => { const li = document.createElement("li"); li.textContent = t; ul.append(li); });
         document.getElementById("snap-now").hidden = false;
       }
       const notes = (Array.isArray(data.notes) ? data.notes : [])
         .slice().sort((a, b) => (b.date || "").localeCompare(a.date || "")).slice(0, 3);
       if (notes.length) {
-        const ul = document.getElementById("notes-list");
+        const ul = document.getElementById("notes-list"); ul.textContent = "";
         notes.forEach(n => {
           const li = document.createElement("li");
           const a = document.createElement("a"); a.href = "/notes?n=" + encodeURIComponent(n.slug);
@@ -402,7 +459,7 @@
       }
       const ideas = Array.isArray(data.ideas) ? data.ideas : [];
       if (ideas.length) {
-        const box = document.getElementById("counts");
+        const box = document.getElementById("counts"); box.textContent = "";
         [["seed","Seed"],["growing","Growing"],["building","Building"],["built","Built"]].forEach(([k, label]) => {
           const d = document.createElement("div");
           if (k === "building") d.className = "on";

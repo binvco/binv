@@ -1,0 +1,30 @@
+# BINV
+
+> Build Ideas. Nurture Vision. — BINV는 BIN이 아이디어·업무·AI·음악을 실험하고, 생각 → 아이디어 → 실험 → 제작 → 결과의 과정을 기록하는 개인 공간입니다. 특정 회사나 직함이 아니라 생각과 작업 그 자체로 이야기합니다.
+
+콘텐츠는 네 가지 시리즈로 나뉩니다: BUILD(만드는 과정), LAB(AI·도구 실험), NOTES(생각과 관점), WORK(일하는 방식).
+최신 상태(지금 하는 일, 기록 목록, 아이디어 단계)는 아래 JSON 파일에 항상 최신으로 정리되어 있습니다.
+
+## 페이지
+
+- [Home](https://binv.ai/): BINV 소개와 Now·Notes·Idea Bank·Music 요약
+- [Now](https://binv.ai/now): 지금 만들고, 배우고, 생각하고 있는 것
+- [Ideas](https://binv.ai/ideas): Idea Bank — 아이디어가 Seed → Growing → Building → Built로 자라는 과정
+- [Notes](https://binv.ai/notes): BUILD·LAB·NOTES·WORK 시리즈 기록 (Season 1: 2026년 10월 14일 시작, 매주 수·일)
+- [binv-data.json](https://binv.ai/binv-data.json): Now·Notes·Ideas의 원본 데이터 (JSON)
+
+## Music
+
+- [BINV on Spotify](https://open.spotify.com/artist/55Vfg9FnR4EOth5ecFItkc): BIN이 쓴 가사로 AI와 함께 만든 곡 (BINV MUSIC)
+
+## Channels
+
+- [YouTube](https://www.youtube.com/@binvco)
+- [Instagram](https://www.instagram.com/binv.ai)
+- [Threads](https://www.threads.com/@binv.ai)
+- [X](https://x.com/binvco)
+- [LinkedIn](https://www.linkedin.com/in/binv)
+
+## Contact
+
+- hello@binv.ai
