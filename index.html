@@ -10,17 +10,18 @@
 <meta property="og:url" content="https://binv.ai">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BINV">
-<meta property="og:image" content="https://binv.ai/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://binv.ai/binv-header.jpg">
+<meta property="og:image:width" content="2800">
+<meta property="og:image:height" content="1200">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="BINV — Build Ideas. Nurture Vision.">
 <meta name="twitter:description" content="Vision by BIN.">
-<meta name="twitter:image" content="https://binv.ai/og-image.png">
+<meta name="twitter:image" content="https://binv.ai/binv-header.jpg">
 <link rel="canonical" href="https://binv.ai/">
 <meta name="naver-site-verification" content="2dd1a27ed6d57750ab9f40a2f1bc4863884e2ce8" />
 <meta name="theme-color" content="#070A12">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070A12'/%3E%3Cpath d='M18 18 L32 46 L46 18' fill='none' stroke='%233D7BFF' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap" rel="stylesheet">
@@ -55,6 +56,8 @@
   .wrap { max-width: 72rem; margin: 0 auto; padding-inline: var(--pad); }
 
   /* Hero */
+  .hero { background: linear-gradient(180deg, rgba(7,10,18,.12), rgba(7,10,18,.82)), url("/binv-header.jpg") center 30% / cover no-repeat; }
+  .brand-symbol { width: clamp(72px, 12vw, 120px); height: auto; margin-bottom: 2rem; border-radius: 50%; }
   .hero {
     position: relative;
     min-height: 100svh;
@@ -269,6 +272,7 @@
     <a href="/ideas">Ideas</a>
     <a href="/notes">Notes</a>
   </nav>
+  <img class="brand-symbol" src="/binv-profile.jpg" alt="BINV V 심볼" width="120" height="120">
   <h1 class="wordmark">BINV</h1>
   <div class="horizon" aria-hidden="true"></div>
   <p class="tagline"><span>Build Ideas. Nurture Vision.</span><span>Vision by BIN.</span></p>
