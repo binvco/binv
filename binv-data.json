@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07",
+  "updated": "2026-10-20",
   "now": {
     "building": [
       "BINV — 아이디어와 실험을 공개하는 개인 운영체계",
@@ -19,6 +19,13 @@
     ]
   },
   "notes": [
+    {
+      "slug": "music-from-lyrics-to-release",
+      "title": "생각을 음악으로, 음악을 영상으로",
+      "date": "2026-10-20",
+      "series": "BUILD",
+      "summary": "SUNO 음원 제작에서 유튜브·Spotify 공개, 실제 촬영물을 활용한 영상까지. 음악 실험에서 남긴 선택과 작업을 기록했다."
+    },
     {
       "slug": "building-binv-around-the-present",
       "title": "홈페이지에 경력 대신 현재를 담았다",
