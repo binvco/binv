@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07",
+  "updated": "2026-10-20",
   "now": {
     "building": [
       "BINV — 아이디어와 실험을 공개하는 개인 운영체계",
@@ -19,6 +19,13 @@
     ]
   },
   "notes": [
+    {
+      "slug": "music-from-lyrics-to-release",
+      "title": "내가 쓴 가사에 재생 버튼이 생겼다",
+      "date": "2026-10-20",
+      "series": "BUILD",
+      "summary": "일상의 한마디가 음악이 되고, Spotify와 유튜브에 공개되기까지. 가사·음원·커버·영상으로 이어진 BINV MUSIC 실험."
+    },
     {
       "slug": "building-binv-around-the-present",
       "title": "홈페이지에 경력 대신 현재를 담았다",
